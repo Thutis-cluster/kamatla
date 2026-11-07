@@ -1378,3 +1378,73 @@ blockquote {
     }
 }
 
+/* HARD OVERRIDE: KAMATL FEATURE IMAGE MUST NEVER CAUSE SIDEWAYS SCROLL */
+@media screen and (max-width: 768px) {
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .projects,
+    .projects .container,
+    .projects-grid,
+    .project-card.large {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .projects-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 15px !important;
+        overflow: hidden !important;
+    }
+
+    .project-card.large {
+        position: relative !important;
+        height: clamp(220px, 68vw, 340px) !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+    }
+
+    /* Target the actual large KAMATL.png logo, not the header wordmark */
+    .project-card.large img[src*="KAMATL.png"],
+    img[src*="KAMATL.png"] {
+        display: block !important;
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        padding: clamp(8px, 3vw, 18px) !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+
+    .project-card.large:hover img[src*="KAMATL.png"],
+    img[src*="KAMATL.png"]:hover {
+        transform: none !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .project-card.large {
+        height: 220px !important;
+    }
+
+    .project-card.large img[src*="KAMATL.png"],
+    img[src*="KAMATL.png"] {
+        padding: 6px !important;
+    }
+}
+
