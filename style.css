@@ -1258,3 +1258,64 @@ blockquote {
         letter-spacing: 0.7px;
     }
 }
+
+/* =========================================
+   MOBILE HEADER LOGO — PREVENT OVERLAP
+========================================= */
+
+.site-header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 0;
+}
+
+.site-header .navbar > .logo {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    line-height: 1.1;
+    max-width: calc(100% - 58px);
+}
+
+.site-header .menu-btn {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .site-header .navbar {
+        min-height: 72px;
+        gap: 12px;
+    }
+
+    .site-header .navbar > .logo {
+        font-size: clamp(18px, 5.4vw, 22px);
+        letter-spacing: 0.6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .navbar {
+        gap: 8px;
+    }
+
+    .site-header .navbar > .logo {
+        font-size: 18px;
+        letter-spacing: 0.3px;
+    }
+
+    .site-header .menu-btn {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+}
+
